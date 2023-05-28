@@ -1,0 +1,46 @@
+name: salary
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flutter_lints: ^2.0.0
+  get: ^4.6.5
+  get_storage: ^2.0.3
+  flutter_screenutil: ^5.5.3+2
+  flutter_svg: ^0.23.0+1
+  back_button_interceptor: ^5.0.2
+  persian_number_utility: ^1.1.2
+  permission_handler: ^10.0.0
+  dio: ^4.0.6
+  flutter_easyloading: ^3.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/pngs/
+    - assets/svgs/
+    - assets/json/
+
+  fonts:
+    - family: iransans
+      fonts:
+        - asset: fonts/iransans.ttf
+    - family: vazir
+      fonts:
+        - asset: fonts/Vazir.ttf
