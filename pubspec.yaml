@@ -23,6 +23,9 @@ dependencies:
   permission_handler: ^10.0.0
   dio: ^4.0.6
   flutter_easyloading: ^3.0.3
+  no_scroll_glow: ^1.0.0
+  intl: ^0.18.1
+  flutter_native_splash: ^2.2.0+1
 
 dev_dependencies:
   flutter_test:
@@ -36,6 +39,7 @@ flutter:
     - assets/pngs/
     - assets/svgs/
     - assets/json/
+    - assets/logo/
 
   fonts:
     - family: iransans

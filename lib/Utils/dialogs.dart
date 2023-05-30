@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'HexColor.dart';
-import 'colors.dart';
+import '../../Utils/HexColor.dart';
+import '../../Utils/colors.dart';
 
 Future<dynamic> guide(BuildContext context) {
   return showDialog(
