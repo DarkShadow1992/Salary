@@ -38,12 +38,12 @@ class ViewTextFieldDetails extends StatelessWidget {
                   border: InputBorder.none,
                   hintStyle: TextStyle(
                       color: HexColor("#B8B8B8"),
-                      fontSize: 13.sp),
+                      fontSize: 12.sp),
                   fillColor: HexColor('#FFFFFF'),
                 ),
                 style: TextStyle(
                     color: HexColor('#083051'),
-                    fontSize: 13.sp),
+                    fontSize: 12.sp),
               ),
             )
         ),

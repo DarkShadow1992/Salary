@@ -79,7 +79,7 @@ class ViewTouchContentHome extends StatelessWidget {
                 margin: EdgeInsets.fromLTRB(0, 10.h, 0, 0),
                 alignment: Alignment.center,
                 child: Text(
-                  'ورود',
+                  'خروج',
                   style: TextStyle(
                     color: AppColor.Color_TextPrimaryColor,
                     fontSize: 12.sp,

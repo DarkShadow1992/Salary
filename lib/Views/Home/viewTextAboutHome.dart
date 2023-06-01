@@ -25,7 +25,7 @@ class ViewTextAboutHome extends StatelessWidget {
                       style: TextStyle(
                           color: HexColor("#4788C7"),
                           fontSize: 12.sp),
-                      'کلیه حقوق محفوظ است. 1401 . 2022',
+                      'کلیه حقوق محفوظ است. 1402 . 2023',
                       textAlign: TextAlign.center,
                       textDirection: TextDirection.rtl,
                     ),

@@ -123,8 +123,6 @@ class _ViewTouchBottomState extends State<ViewTouchBotom> {
                             child: Text(
                               'آرشیو',
                               style: TextStyle(
-                                fontFamily:
-                                'IRANSans_Light',
                                 color: HexColor('#CCDEEF'),
                                 fontSize: 13.sp,
                               ),

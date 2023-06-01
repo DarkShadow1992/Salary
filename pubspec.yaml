@@ -42,9 +42,18 @@ flutter:
     - assets/logo/
 
   fonts:
-    - family: iransans
+    - family: IRANSansMedium
       fonts:
-        - asset: fonts/iransans.ttf
+        - asset: fonts/IRANSansMedium.ttf
+    - family: IRANSansLight
+      fonts:
+        - asset: fonts/IRANSansLight.ttf
     - family: vazir
       fonts:
         - asset: fonts/Vazir.ttf
+    - family: SFProRegular
+      fonts:
+        - asset: fonts/SFProRegular.ttf
+    - family: SFProLight
+      fonts:
+        - asset: fonts/SFProLight.ttf

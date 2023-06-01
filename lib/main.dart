@@ -1,12 +1,9 @@
-// @dart=2.8
-
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'Utils/HexColor.dart';
-import 'Utils/colors.dart';
 import 'mainController.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get_storage/get_storage.dart';
@@ -36,7 +33,7 @@ class Splash extends StatelessWidget {
         splitScreenMode: true,
         builder: (context,i) => GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(fontFamily: "vazir"),
+            theme: ThemeData(fontFamily: "IRANSansMedium"),
             builder: EasyLoading.init(),
             home: Container(
               color: HexColor("E5F1FC"),
@@ -46,7 +43,7 @@ class Splash extends StatelessWidget {
                 children: [
                   SvgPicture.asset('assets/svgs/time_limit.svg',width: 100.w),
                   SizedBox(height: 30.h,),
-                  Text('مدیریت حقوق و دستمزد',style: TextStyle(
+                  Text('کنترل تردد پرسنل',style: TextStyle(
                     color: HexColor("4788C7"),
                     fontWeight: FontWeight.bold,
                     fontSize: 13.sp

@@ -161,7 +161,7 @@ class DrawerMainHome extends StatelessWidget {
                               )),
                         ),
                         ListTile(
-                          title: Text('مدیریت حقوق و دستمزد',
+                          title: Text('کنترل تردد پرسنل',
                             style: TextStyle(
                               fontSize: 13.sp,
                               color: HexColor('#083051'),),
@@ -170,10 +170,10 @@ class DrawerMainHome extends StatelessWidget {
                           ),
                         ),
                         ListTile(
-                          title: Text('02.01.22-beta.69',
+                          title: Text('0.0.7.beta70',
                             style: TextStyle(
-                              
-                              fontSize: 10.sp,
+                              fontFamily: "SFProRegular",
+                              fontSize: 14.sp,
                               color: HexColor('#083051'),),
                             textAlign: TextAlign.center,
                             textDirection: TextDirection.ltr,

@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import '../../Utils/AllApp_Color.dart';
-import '../../Utils/CustomAlerts.dart';
 import '../../Utils/HexColor.dart';
-import '../../Utils/colors.dart';
 import '../Home/viewDrawerHome.dart';
-import '../Home/viewShamsiDate.dart';
 import 'BasePageController.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class BasePage extends StatelessWidget {
   var controller = Get.put(BasePage_Controller());
@@ -33,36 +29,30 @@ class BasePage extends StatelessWidget {
           drawerEnableOpenDragGesture: false,
           backgroundColor: AppColor.Color_HomeBackgroundColor,
           appBar: AppBar(
-            title: Text('حقوق و دستمزد',
+            title: Text('کنترل تردد پرسنل',
               style: TextStyle(
                   color: AppColor.Color_TextPrimaryColor,
                   overflow: TextOverflow.ellipsis,
-                  fontSize: 14.sp),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 13.sp),
             ),
             iconTheme: IconThemeData(
               color: AppColor.Color_TextPrimaryColor,
             ),
             elevation: 0.0,
+            toolbarHeight: 70.0,
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20.w),
-                  bottomRight: Radius.circular(20.w),
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30.h),
+                  bottomRight: Radius.circular(30.h),
                 )
             ),
             actions: <Widget>[
               IconButton(
                 icon: (
-                    const Icon(CupertinoIcons.square_stack_3d_up_fill)
-                ),
-                color: AppColor.Color_IconPrimaryColor,
-                onPressed: (){
-
-                },
-              ),
-              IconButton(
-                icon: (
                     const Icon(CupertinoIcons.moon_stars_fill)
                 ),
                 color: AppColor.Color_IconPrimaryColor,
+                padding: const EdgeInsets.only(left: 15.0),
                 onPressed: (){
                 },
               ),
@@ -104,7 +94,7 @@ class BasePage extends StatelessWidget {
                         children: [
                           Expanded(child: Icon(CupertinoIcons.home,color: HexColor(controller.navIndex.value==2 ? controller.selectedColor : controller.unselectedColor))),
                           Text('خانه',style: TextStyle(
-                              fontSize: 11.sp,
+                              fontSize: 12.sp,
                               color: HexColor(controller.navIndex.value==2 ? controller.selectedColor : controller.unselectedColor)
                           )),
                           SizedBox(height: 5.h),
@@ -123,9 +113,10 @@ class BasePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Expanded(child: SvgPicture.asset(controller.navIndex.value==1 ?  'assets/svgs/VitrinFill.svg' : 'assets/svgs/Vitrin.svg'),),
+                          // Expanded(child: SvgPicture.asset(controller.navIndex.value==1 ?  'assets/svgs/VitrinFill.svg' : 'assets/svgs/Vitrin.svg'),),
+                          Expanded(child: Icon(CupertinoIcons.archivebox,color: HexColor(controller.navIndex.value==1 ? controller.selectedColor : controller.unselectedColor))),
                           Text('آرشیو',style: TextStyle(
-                              fontSize: 11.sp,
+                              fontSize: 12.sp,
                               color: HexColor(controller.navIndex.value==1 ? controller.selectedColor : controller.unselectedColor)
                           )),
                           SizedBox(height: 5.h),
@@ -144,9 +135,9 @@ class BasePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Expanded(child: SvgPicture.asset(controller.navIndex.value==3 ? 'assets/svgs/OrderFill.svg' : 'assets/svgs/AddPrd.svg',height: 30.h),),
+                          Expanded(child: Icon(CupertinoIcons.settings,color: HexColor(controller.navIndex.value==3 ? controller.selectedColor : controller.unselectedColor))),
                           Text('تنظیمات',style: TextStyle(
-                              fontSize: 11.sp,
+                              fontSize: 12.sp,
                               color: HexColor(controller.navIndex.value==3 ? controller.selectedColor : controller.unselectedColor)
                           )),
                           SizedBox(height: 5.h),
@@ -170,10 +161,11 @@ class BasePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Expanded(child: SvgPicture.asset('assets/svgs/VitrinFill.svg'),),
+                          Expanded(child: Icon(CupertinoIcons.clear_circled_solid, color: HexColor("D12D0C"))),
                           Text('خروج',style: TextStyle(
-                              fontSize: 11.sp,
-                              color: HexColor(controller.unselectedColor)
+                              fontSize: 12.sp,
+                              fontWeight:  FontWeight.bold,
+                              color: HexColor(controller.selectExitColor)
                           )),
                           SizedBox(height: 5.h),
                         ],
