@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:get_storage/get_storage.dart';
+import '../../Utils/Strings.dart';
+import '../Archive/Archive.dart';
 import '../Home/Home.dart';
 import 'Api/BasePageService.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,6 +15,7 @@ class BasePage_Controller extends GetxController {
   RxInt pageIndex = 0.obs;
   RxList pages = [
     Home(),//0
+    Archive(),//1
   ].obs;
   RxInt navIndex = 2.obs;
   String selectedColor="003C75";
@@ -24,7 +27,7 @@ class BasePage_Controller extends GetxController {
   RxBool navbarVIS=true.obs;
   RxBool isAvoid=false.obs;
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-
+  RxString textHeader=txtHomeHeader.obs;
 
   @override
   Future<void> onInit() async {
@@ -56,10 +59,14 @@ class BasePage_Controller extends GetxController {
 
   gotoHome() {
     navIndex.value=2;
+    pageIndex.value=0;
+    textHeader.value=txtHomeHeader;
   }
 
   gotoSetting() {
     navIndex.value=1;
+    pageIndex.value=1;
+    textHeader.value=txtArchiveHeader;
   }
 
   gotoExit() {

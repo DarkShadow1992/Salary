@@ -29,7 +29,7 @@ class BasePage extends StatelessWidget {
           drawerEnableOpenDragGesture: false,
           backgroundColor: AppColor.Color_HomeBackgroundColor,
           appBar: AppBar(
-            title: Text('کنترل تردد پرسنل',
+            title: Text(controller.textHeader.value,
               style: TextStyle(
                   color: AppColor.Color_TextPrimaryColor,
                   overflow: TextOverflow.ellipsis,

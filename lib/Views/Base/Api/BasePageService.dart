@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import '../../../Utils/Keys.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 
