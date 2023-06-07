@@ -12,6 +12,9 @@ class AppColor {
   static Color Color_barrierAlertDialogColor= const Color(0xFFF5FAFD);
   static Color Color_drawerScrimColor= const Color(0xFFF5FAFD);
   static Color Card_highlightColor= const Color(0xFFF5FAFD);
+  static Color Card_highlightGoldColor= const Color(0xFFFFE3C2);
+  static Color Card_GolbehyColor= const Color(0xFFFFE1DB);
+  static Color Card_GoldColor= const Color(0xFFFFD500);
   static Color Card_TrashColor= const Color(0xFFFFF6F5);
   static Color Card_TrashTextColor= const Color(0xFFD9366C);
   static Color Card_TrashSplashColor= const Color(0xFFD9366C);
