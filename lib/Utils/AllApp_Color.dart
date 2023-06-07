@@ -15,6 +15,7 @@ class AppColor {
   static Color Card_highlightGoldColor= const Color(0xFFFFE3C2);
   static Color Card_GolbehyColor= const Color(0xFFFFE1DB);
   static Color Card_GoldColor= const Color(0xFFFFD500);
+  static Color Card_GoldHighLiteColor= const Color(0xFFFFF7CC);
   static Color Card_TrashColor= const Color(0xFFFFF6F5);
   static Color Card_TrashTextColor= const Color(0xFFD9366C);
   static Color Card_TrashSplashColor= const Color(0xFFD9366C);
@@ -22,6 +23,7 @@ class AppColor {
   static Color Card_EditTextColor= const Color(0xFF00CC99);
   static Color Color_TouchSinginSplashColor= const Color(0xFF00CC99);
   static Color Color_TouchSinginhighlightColor= const Color(0xFF00CC99).withAlpha(40);
+  static Color Card_GreenLightColor= const Color(0xFFC7F8EE);
   static Color Color_EditIcon= const Color(0xFFFF8600);
   static Color Color_EditIconSplashColor= const Color(0xFFFF8600).withAlpha(30);
   static Color Color_EditIconhighlightColor= const Color(0xFFFF8600).withAlpha(20);

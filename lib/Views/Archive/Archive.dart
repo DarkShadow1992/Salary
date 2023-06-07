@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jdate/jdate.dart';
 import '../../Utils/AllApp_Color.dart';
 import '../../Utils/HexColor.dart';
 import 'ArchiveController.dart';
@@ -82,7 +83,6 @@ class Archive extends StatelessWidget {
                                     child: Container(
                                       alignment: Alignment.center,
                                       child: Text(
-                                        //currentMonthName.monthName,
                                         '${controller.currentMonthName}',
                                         style: TextStyle(
                                           color: AppColor
@@ -430,7 +430,7 @@ class Archive extends StatelessWidget {
                               width: Get.width,
                               child: Card(
                                 margin: EdgeInsets.fromLTRB(10.w, 2.w, 10.w, 2.w),
-                                color: AppColor.Card_GoldColor,
+                                color: AppColor.Card_GreenLightColor,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.all(
                                       Radius.circular(7.w)),
@@ -461,7 +461,7 @@ class Archive extends StatelessWidget {
                                       // ردبف آیکن ثبت خروج
                                       Expanded(child: Padding(padding: EdgeInsets.fromLTRB(0.w, 0.h, 15.w, 0.h),child: Align(alignment: Alignment.centerRight,child: SvgPicture.asset(
                                           'assets/icons/cardIcon_edit.svg',
-                                          height: 18.h,
+                                          height: 16.h,
                                           color: AppColor.Color_TextPrimaryColor),))),
                                       //  اطلاعات  کارکرد و جمع درآمد
                                       Expanded(child:

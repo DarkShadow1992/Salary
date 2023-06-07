@@ -67,7 +67,7 @@ class BasePage extends StatelessWidget {
             width: Get.width,
           ),
           bottomNavigationBar: Container(
-            height: 65.h,
+            height: 60.h,
             decoration: BoxDecoration(
               color: HexColor(controller.selectedBackColor).withOpacity(0.15),
               borderRadius: BorderRadius.only(
