@@ -289,7 +289,7 @@ class Archive extends StatelessWidget {
                 showTrailing: true,
                 child: ListView.builder(
                   padding: EdgeInsets.fromLTRB(10.w, 5.w, 10.w, 0.w),
-                  itemCount: 1,
+                  itemCount: 10,
                   itemBuilder: (context, index) => SizedBox(
                     width: Get.width,
                     height: 140.h,
