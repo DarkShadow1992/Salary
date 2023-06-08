@@ -107,36 +107,15 @@ class BasePage extends StatelessWidget {
                 )),
                 Expanded(child: GestureDetector(
                   child: Container(
-                      color: HexColor(controller.navIndex.value==1 ? controller.selectedBackColor : "FFFFFF").withOpacity(0.15),
-                      width: 65.w,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          // Expanded(child: SvgPicture.asset(controller.navIndex.value==1 ?  'assets/svgs/VitrinFill.svg' : 'assets/svgs/Vitrin.svg'),),
-                          Expanded(child: Icon(CupertinoIcons.archivebox,color: HexColor(controller.navIndex.value==1 ? controller.selectedColor : controller.unselectedColor))),
-                          Text('آرشیو',style: TextStyle(
-                              fontSize: 12.sp,
-                              color: HexColor(controller.navIndex.value==1 ? controller.selectedColor : controller.unselectedColor)
-                          )),
-                          SizedBox(height: 5.h),
-                        ],
-                      )
-                  ),
-                  onTap:() {
-                    controller.gotoSetting();
-                  },
-                )),
-                Expanded(child: GestureDetector(
-                  child: Container(
                       color: HexColor(controller.navIndex.value==3 ? controller.selectedBackColor : "FFFFFF").withOpacity(0.15),
                       width: 65.w,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Expanded(child: Icon(CupertinoIcons.settings,color: HexColor(controller.navIndex.value==3 ? controller.selectedColor : controller.unselectedColor))),
-                          Text('تنظیمات',style: TextStyle(
+                          // Expanded(child: SvgPicture.asset(controller.navIndex.value==1 ?  'assets/svgs/VitrinFill.svg' : 'assets/svgs/Vitrin.svg'),),
+                          Expanded(child: Icon(CupertinoIcons.archivebox,color: HexColor(controller.navIndex.value==3 ? controller.selectedColor : controller.unselectedColor))),
+                          Text('آرشیو',style: TextStyle(
                               fontSize: 12.sp,
                               color: HexColor(controller.navIndex.value==3 ? controller.selectedColor : controller.unselectedColor)
                           )),
@@ -144,8 +123,29 @@ class BasePage extends StatelessWidget {
                         ],
                       )
                   ),
-                  onTap:() async {
+                  onTap:() {
                     controller.gotoArchive();
+                  },
+                )),
+                Expanded(child: GestureDetector(
+                  child: Container(
+                      color: HexColor(controller.navIndex.value==4 ? controller.selectedBackColor : "FFFFFF").withOpacity(0.15),
+                      width: 65.w,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(child: Icon(CupertinoIcons.settings,color: HexColor(controller.navIndex.value==4 ? controller.selectedColor : controller.unselectedColor))),
+                          Text('تنظیمات',style: TextStyle(
+                              fontSize: 12.sp,
+                              color: HexColor(controller.navIndex.value==4 ? controller.selectedColor : controller.unselectedColor)
+                          )),
+                          SizedBox(height: 5.h),
+                        ],
+                      )
+                  ),
+                  onTap:() async {
+                    controller.gotoSetting();
                   },
                 )),
                 Expanded(child: GestureDetector(

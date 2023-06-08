@@ -5,6 +5,7 @@ class AppColor {
   static Color Color_TransparentColor= const Color(0xFFF5FAFD);
   static Color Color_HomeListViewColor= const Color(0xFFFFFFFF);
   static Color Color_WhiteColor= const Color(0xFFFFFFFF);
+  static Color Color_GrayColor= const Color(0xFFB8B8B8);
   static Color Color_statusBarColor= const Color(0xFFF5FAFD);
   static Color Color_systemNavigationBarColor= const Color(0xFFF5FAFD);
   static Color Color_TextPrimaryColor= const Color(0xFF083051);

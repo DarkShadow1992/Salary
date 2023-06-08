@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:salary/Views/Setting/Setting.dart';
 import '../../Utils/Strings.dart';
 import '../Archive/Archive.dart';
 import '../Home/Home.dart';
@@ -16,6 +17,7 @@ class BasePage_Controller extends GetxController {
   RxList pages = [
     Home(),//0
     Archive(),//1
+    Setting()//2
   ].obs;
   RxInt navIndex = 2.obs;
   String selectedColor="003C75";
@@ -55,6 +57,8 @@ class BasePage_Controller extends GetxController {
 
   gotoArchive() {
     navIndex.value=3;
+    pageIndex.value=1;
+    textHeader.value=txtArchiveHeader;
   }
 
   gotoHome() {
@@ -64,9 +68,9 @@ class BasePage_Controller extends GetxController {
   }
 
   gotoSetting() {
-    navIndex.value=1;
-    pageIndex.value=1;
-    textHeader.value=txtArchiveHeader;
+    navIndex.value=4;
+    pageIndex.value=2;
+    textHeader.value=txtSettingHeader;
   }
 
   gotoExit() {
