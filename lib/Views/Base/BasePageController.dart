@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:back_button_interceptor/back_button_interceptor.dart';
@@ -7,6 +6,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:salary/Views/Setting/Setting.dart';
 import '../../Utils/Strings.dart';
 import '../Archive/Archive.dart';
+import '../CostManagement/CostManagement.dart';
 import '../Home/Home.dart';
 import 'Api/BasePageService.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,7 +17,8 @@ class BasePage_Controller extends GetxController {
   RxList pages = [
     Home(),//0
     Archive(),//1
-    Setting()//2
+    Setting(),//2
+    CostManagement()//3
   ].obs;
   RxInt navIndex = 2.obs;
   String selectedColor="003C75";
@@ -67,8 +68,19 @@ class BasePage_Controller extends GetxController {
     textHeader.value=txtHomeHeader;
   }
 
+  backToHome() {
+    pageIndex.value=0;
+    navIndex.value=2;
+    textHeader.value=txtHomeHeader;
+  }
+
   gotoSetting() {
     navIndex.value=4;
+    pageIndex.value=2;
+    textHeader.value=txtSettingHeader;
+  }
+
+  backToSetting(){
     pageIndex.value=2;
     textHeader.value=txtSettingHeader;
   }
@@ -77,4 +89,18 @@ class BasePage_Controller extends GetxController {
     exit(0);
   }
 
+  backPages() {
+    if(pageIndex.value==3){
+      backToSetting();
+    }else if(pageIndex.value==2){
+      backToHome();
+    }else if(pageIndex.value==1){
+      backToHome();
+    }
+  }
+
+  gotoCostManegment() {
+    pageIndex.value=3;
+    textHeader.value=txtCostManagement;
+  }
 }

@@ -47,13 +47,18 @@ class BasePage extends StatelessWidget {
                 )
             ),
             actions: <Widget>[
-              IconButton(
-                icon: (
-                    const Icon(CupertinoIcons.moon_stars_fill)
-                ),
+              controller.pageIndex.value==0 ? IconButton(
+                icon: const Icon(CupertinoIcons.moon_stars_fill),
                 color: AppColor.Color_IconPrimaryColor,
                 padding: const EdgeInsets.only(left: 15.0),
                 onPressed: (){
+                },
+              ) : IconButton(
+                icon: const Icon(CupertinoIcons.chevron_back),
+                color: AppColor.Color_IconPrimaryColor,
+                padding: const EdgeInsets.only(left: 15.0),
+                onPressed: (){
+                  controller.backPages();
                 },
               ),
             ],

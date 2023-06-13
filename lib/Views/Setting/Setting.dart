@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:salary/Views/Base/BasePageController.dart';
 import '../../Utils/AllApp_Color.dart';
 import '../../Utils/HexColor.dart';
 import 'SettingController.dart';
@@ -18,19 +19,14 @@ class Setting extends StatelessWidget {
         //تنظیمات عمومی
         Container(
             margin: EdgeInsets.fromLTRB(0.w, 10.h, 16.w, 10.h),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    'تنظیمات عمومی',
-                    style: TextStyle(
-                      color: AppColor.Color_GrayColor,
-                      fontSize: 13.sp,
-                    ),
-                    textAlign: TextAlign.right,
-                  ),
-                ),
-              ],
+            alignment: Alignment.centerRight,
+            child: Text(
+              'تنظیمات عمومی',
+              style: TextStyle(
+                color: AppColor.Color_GrayColor,
+                fontSize: 13.sp,
+              ),
+              textAlign: TextAlign.right,
             )),
         Padding(
            padding: EdgeInsets.fromLTRB(5.w, 10.h, 5.w, 0.h),
@@ -46,7 +42,9 @@ class Setting extends StatelessWidget {
                elevation: 2.0,
                child: InkWell(
                  borderRadius: BorderRadius.circular(6.w),
-                 onTap: () {},
+                 onTap: () {
+                   Get.find<BasePage_Controller>().gotoCostManegment();
+                 },
                  highlightColor: AppColor.Card_highlightColor,
                  splashColor: AppColor.Card_highlightColor,
                  child: Column(
@@ -55,7 +53,7 @@ class Setting extends StatelessWidget {
                    children: [
                     SizedBox(
                       width: Get.width,
-                      child:  Row(
+                      child: Row(
                         children: [
                           // مدیریت هزینه ها
                           Expanded(
@@ -70,10 +68,8 @@ class Setting extends StatelessWidget {
                             ),),
                           ),
                           // ردبف آیکن مدیریت هزینه ها
-                          Expanded(
-                            child: Padding(padding: EdgeInsets.fromLTRB(0.w, 0.h, 105.w, 0.h), child: const Icon(CupertinoIcons.arrow_up_bin_fill),
-                            ),
-                          )
+                          const Icon(CupertinoIcons.arrow_up_bin_fill),
+                          SizedBox(width: 18.w,)
                         ],
                       ),
                     ),
