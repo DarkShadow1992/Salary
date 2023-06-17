@@ -29,7 +29,7 @@ alertDialogAboutApp(BuildContext context) {
           ),
           textAlign: TextAlign.center,
         ),
-        content: Text("مدیریت حقوق و دستمزد",
+        content: Text("کنترل تردد پرسنل",
           style: TextStyle(
               
               fontSize: 12.sp,
@@ -55,7 +55,6 @@ alertDialogAboutApp(BuildContext context) {
                   ),
                 ),
                 child: Text('بازگشت', style: TextStyle(
-                    
                     fontSize: 12.sp,
                     color: HexColor('#083051')
                 ),)

@@ -6,6 +6,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:salary/Views/Setting/Setting.dart';
 import '../../Utils/Strings.dart';
 import '../Archive/Archive.dart';
+import '../BackupData/BackupData.dart';
 import '../CostManagement/CostManagement.dart';
 import '../Home/Home.dart';
 import 'Api/BasePageService.dart';
@@ -18,7 +19,8 @@ class BasePage_Controller extends GetxController {
     Home(),//0
     Archive(),//1
     Setting(),//2
-    CostManagement()//3
+    CostManagement(),//3
+    BackupData()//4
   ].obs;
   RxInt navIndex = 2.obs;
   String selectedColor="003C75";
@@ -57,14 +59,14 @@ class BasePage_Controller extends GetxController {
   }
 
   gotoArchive() {
-    navIndex.value=3;
     pageIndex.value=1;
+    navIndex.value=3;
     textHeader.value=txtArchiveHeader;
   }
 
   gotoHome() {
-    navIndex.value=2;
     pageIndex.value=0;
+    navIndex.value=2;
     textHeader.value=txtHomeHeader;
   }
 
@@ -75,8 +77,8 @@ class BasePage_Controller extends GetxController {
   }
 
   gotoSetting() {
-    navIndex.value=4;
     pageIndex.value=2;
+    navIndex.value=4;
     textHeader.value=txtSettingHeader;
   }
 
@@ -90,7 +92,9 @@ class BasePage_Controller extends GetxController {
   }
 
   backPages() {
-    if(pageIndex.value==3){
+    if(pageIndex.value==4){
+      backToSetting();
+    }else if(pageIndex.value==3){
       backToSetting();
     }else if(pageIndex.value==2){
       backToHome();
@@ -102,5 +106,15 @@ class BasePage_Controller extends GetxController {
   gotoCostManegment() {
     pageIndex.value=3;
     textHeader.value=txtCostManagement;
+  }
+
+  gotoBackupData() {
+    pageIndex.value=4;
+    textHeader.value=txtBackupHeader;
+  }
+
+  backToBackupData(){
+    pageIndex.value=3;
+    textHeader.value=txtBackupHeader;
   }
 }

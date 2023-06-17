@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:salary/Utils/CustomAlerts.dart';
 import '../../Utils/AllApp_Color.dart';
 import '../../Utils/HexColor.dart';
 import '../../Utils/MaskedTextController.dart';
@@ -16,12 +17,12 @@ class CostManagement extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        //تنظیمات عمومی
+        //مبلغ هر ساعت (تومان)
         Container(
             margin: EdgeInsets.fromLTRB(0.w, 10.h, 16.w, 10.h),
             alignment: Alignment.centerRight,
             child: Text(
-              'تنظیمات عمومی',
+              'مبلغ هر ساعت (تومان)',
               style: TextStyle(
                 color: AppColor.Color_GrayColor,
                 fontSize: 13.sp,
@@ -31,15 +32,15 @@ class CostManagement extends StatelessWidget {
         SizedBox(height: 15.h,),
         Row(
           children: [
-            SizedBox(width: 18.w),
+            SizedBox(width: 15.w),
             Expanded(flex: 60, child: Container(
-              height: 50.h,
+              height: 45.h,
               width: Get.width,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(6.h)),
                   border: Border.all(
-                      color: HexColor("4788C7").withOpacity(.5)
+                      color: AppColor.Card_EditColor
                   )
               ),
               child: TextField(
@@ -47,33 +48,38 @@ class CostManagement extends StatelessWidget {
                 keyboardType: TextInputType.number,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: 13.sp, color: Colors.black),
+                    fontSize: 13.sp, color: AppColor.Color_TextPrimaryColor),
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(left: 10.w),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7.h),
-                    borderSide: BorderSide(
-                        color: HexColor("#243841").withAlpha(26)),
-                  ),
-                  disabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7.h),
-                    borderSide: BorderSide(
-                        color: HexColor("#243841").withAlpha(26)),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7.h),
-                    borderSide: BorderSide(
-                        color: HexColor("#243841").withAlpha(26)),
-                  ),
-                  focusedErrorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7.h),
-                    borderSide: BorderSide(
-                        color: HexColor("#243841").withAlpha(26)),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7.h),
-                    borderSide: const BorderSide(color: Colors.red),
-                  ),
+                  border: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                  errorBorder: InputBorder.none,
+                  disabledBorder: InputBorder.none,
+                  // focusedBorder: OutlineInputBorder(
+                  //   borderRadius: BorderRadius.circular(6.h),
+                  //   borderSide: BorderSide(
+                  //       color: HexColor("#243841").withAlpha(26)),
+                  // ),
+                  // disabledBorder: OutlineInputBorder(
+                  //   borderRadius: BorderRadius.circular(6.h),
+                  //   borderSide: BorderSide(
+                  //       color: HexColor("#243841").withAlpha(26)),
+                  // ),
+                  // enabledBorder: OutlineInputBorder(
+                  //   borderRadius: BorderRadius.circular(6.h),
+                  //   borderSide: BorderSide(
+                  //       color: HexColor("#243841").withAlpha(26)),
+                  // ),
+                  // focusedErrorBorder: OutlineInputBorder(
+                  //   borderRadius: BorderRadius.circular(6.h),
+                  //   borderSide: BorderSide(
+                  //       color: HexColor("#243841").withAlpha(26)),
+                  // ),
+                  // errorBorder: OutlineInputBorder(
+                  //   borderRadius: BorderRadius.circular(6.h),
+                  //   borderSide: BorderSide(color: AppColor.Card_TrashColor),
+                  // ),
                   hintText: "مبلغ خود را وارد نمایید",
                   hintStyle: TextStyle(
                     color: HexColor("CCDEEF"),
@@ -94,17 +100,30 @@ class CostManagement extends StatelessWidget {
               )
             )),
             SizedBox(width: 10.w),
-            Expanded(flex: 20, child: Container(
-              height: 50.h,
-              width: Get.width,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  color: HexColor("E5F1FC"),
-                  borderRadius: BorderRadius.all(Radius.circular(6.h)),
+            Expanded(
+                flex: 15,
+                child: InkWell(
+                    borderRadius: BorderRadius.circular(6.w),
+                    onTap: () {
 
-              ),
-              child: Text('ثبت'),
-            )),
+                    },
+                    highlightColor: AppColor.Card_highlightColor,
+                    splashColor: AppColor.Card_highlightColor,
+                  child: Container(
+                    height: 45.h,
+                    width: Get.width,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: AppColor.Card_GreenLightColor,
+                      borderRadius: BorderRadius.all(Radius.circular(6.h)),
+                    ),
+                    child: const Text('ثبت',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold
+                    ),
+                    ),
+                  )
+                )),
             SizedBox(width: 18.w),
           ],
         )
