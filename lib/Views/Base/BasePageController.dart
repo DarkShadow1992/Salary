@@ -5,12 +5,15 @@ import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:salary/Views/Setting/Setting.dart';
 import '../../Utils/Strings.dart';
+import '../../Utils/database_helper.dart';
 import '../Archive/Archive.dart';
 import '../BackupData/BackupData.dart';
 import '../CostManagement/CostManagement.dart';
+import '../CostManagement/CostManagementController.dart';
 import '../Home/Home.dart';
 import 'Api/BasePageService.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 class BasePage_Controller extends GetxController {
   BasePageService basePageService=BasePageService();
@@ -33,16 +36,16 @@ class BasePage_Controller extends GetxController {
   RxBool isAvoid=false.obs;
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   RxString textHeader=txtHomeHeader.obs;
+  final dbHelper = DatabaseHelper();
 
   @override
   Future<void> onInit() async {
     super.onInit();
     BackButtonInterceptor.add(myInterceptor);
-
     if (box.read("token")==null) {
 
     } else {}
-
+    await dbHelper.init();
   }
 
   @override
@@ -117,4 +120,40 @@ class BasePage_Controller extends GetxController {
     pageIndex.value=3;
     textHeader.value=txtBackupHeader;
   }
+
+ /* void _insert() async {
+    // row to insert
+    Map<String, dynamic> row = {
+      DatabaseHelper.columnName: 'Bob',
+      DatabaseHelper.columnAge: 23
+    };
+    final id = await dbHelper.insert(row);
+    debugPrint('inserted row id: $id');
+  }
+
+  void _query() async {
+    final allRows = await dbHelper.queryAllRows();
+    debugPrint('query all rows:');
+    for (final row in allRows) {
+      debugPrint(row.toString());
+    }
+  }
+
+  void _update() async {
+    // row to update
+    Map<String, dynamic> row = {
+      DatabaseHelper.columnId: 1,
+      DatabaseHelper.columnName: 'Mary',
+      DatabaseHelper.columnAge: 32
+    };
+    final rowsAffected = await dbHelper.update(row);
+    debugPrint('updated $rowsAffected row(s)');
+  }
+
+  void _delete() async {
+    // Assuming that the number of rows is the id for the last row.
+    final id = await dbHelper.queryRowCount();
+    final rowsDeleted = await dbHelper.delete(id);
+    debugPrint('deleted $rowsDeleted row(s): row $id');
+  }*/
 }

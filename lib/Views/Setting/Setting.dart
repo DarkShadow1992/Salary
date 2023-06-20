@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:salary/Views/Base/BasePageController.dart';
+import 'package:salary/Views/CostManagement/CostManagementController.dart';
 import '../../Utils/AllApp_Color.dart';
 import '../../Utils/HexColor.dart';
 import 'SettingController.dart';
@@ -43,37 +44,31 @@ class Setting extends StatelessWidget {
                child: InkWell(
                  borderRadius: BorderRadius.circular(6.w),
                  onTap: () {
-                   Get.find<BasePage_Controller>().gotoCostManegment();
+                   Get.find<CostManagement_Controller>().getCurrentMoney();
                  },
                  highlightColor: AppColor.Card_highlightColor,
                  splashColor: AppColor.Card_highlightColor,
-                 child: Column(
-                   mainAxisAlignment: MainAxisAlignment.center,
-                   crossAxisAlignment: CrossAxisAlignment.center,
-                   children: [
-                    SizedBox(
-                      width: Get.width,
-                      child: Row(
-                        children: [
-                          // مدیریت هزینه ها
-                          Expanded(
-                            child: Padding(padding: EdgeInsets.fromLTRB(0.w, 0.h, 15.w, 0.h), child: Text(
-                              'مدیریت هزینه ها',
-                              style: TextStyle(
-                                color: AppColor.Color_TextPrimaryColor,
-                                fontSize: 12.sp,
-                              ),
-                              textAlign: TextAlign.right,
-                              textDirection: TextDirection.rtl,
-                            ),),
-                          ),
-                          // ردبف آیکن مدیریت هزینه ها
-                          const Icon(CupertinoIcons.arrow_up_bin_fill),
-                          SizedBox(width: 18.w,)
-                        ],
-                      ),
-                    ),
-                   ],
+                 child: SizedBox(
+                   width: Get.width,
+                   child: Row(
+                     children: [
+                       // مدیریت هزینه ها
+                       Expanded(
+                         child: Padding(padding: EdgeInsets.fromLTRB(0.w, 0.h, 15.w, 0.h), child: Text(
+                           'مدیریت هزینه ها',
+                           style: TextStyle(
+                             color: AppColor.Color_TextPrimaryColor,
+                             fontSize: 12.sp,
+                           ),
+                           textAlign: TextAlign.right,
+                           textDirection: TextDirection.rtl,
+                         ),),
+                       ),
+                       // ردبف آیکن مدیریت هزینه ها
+                       const Icon(CupertinoIcons.arrow_up_bin_fill),
+                       SizedBox(width: 18.w,)
+                     ],
+                   ),
                  ),
                ),
              ),

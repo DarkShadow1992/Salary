@@ -105,7 +105,7 @@ class CostManagement extends StatelessWidget {
                 child: InkWell(
                     borderRadius: BorderRadius.circular(6.w),
                     onTap: () {
-
+                       controller.insertMoney();
                     },
                     highlightColor: AppColor.Card_highlightColor,
                     splashColor: AppColor.Card_highlightColor,
