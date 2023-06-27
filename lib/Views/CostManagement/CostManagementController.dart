@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:salary/Views/Base/BasePageController.dart';
+import '../../Utils/CustomAlerts.dart';
 import 'Api/CostManagementService.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 
@@ -33,14 +34,15 @@ class CostManagement_Controller extends GetxController{
         };
         await Get.find<BasePage_Controller>().dbHelper.insert(row,'salary_money');
         ///DIALOG
+        alertDialogSuccessAddMoney;
       }
       else{
         updateMoney(txtController.text.replaceAll(",", ""));
       }
     }else{
       ///DIALOG
+      //alertDialogSuccessAddMoney;
     }
-
   }
   void updateMoney(String money) async {
     Map<String, dynamic> row = {
@@ -50,5 +52,4 @@ class CostManagement_Controller extends GetxController{
     await Get.find<BasePage_Controller>().dbHelper.update(row,'salary_money','_id');
     ///DIALOG
   }
-
 }

@@ -56,30 +56,6 @@ class CostManagement extends StatelessWidget {
                   enabledBorder: InputBorder.none,
                   errorBorder: InputBorder.none,
                   disabledBorder: InputBorder.none,
-                  // focusedBorder: OutlineInputBorder(
-                  //   borderRadius: BorderRadius.circular(6.h),
-                  //   borderSide: BorderSide(
-                  //       color: HexColor("#243841").withAlpha(26)),
-                  // ),
-                  // disabledBorder: OutlineInputBorder(
-                  //   borderRadius: BorderRadius.circular(6.h),
-                  //   borderSide: BorderSide(
-                  //       color: HexColor("#243841").withAlpha(26)),
-                  // ),
-                  // enabledBorder: OutlineInputBorder(
-                  //   borderRadius: BorderRadius.circular(6.h),
-                  //   borderSide: BorderSide(
-                  //       color: HexColor("#243841").withAlpha(26)),
-                  // ),
-                  // focusedErrorBorder: OutlineInputBorder(
-                  //   borderRadius: BorderRadius.circular(6.h),
-                  //   borderSide: BorderSide(
-                  //       color: HexColor("#243841").withAlpha(26)),
-                  // ),
-                  // errorBorder: OutlineInputBorder(
-                  //   borderRadius: BorderRadius.circular(6.h),
-                  //   borderSide: BorderSide(color: AppColor.Card_TrashColor),
-                  // ),
                   hintText: "مبلغ خود را وارد نمایید",
                   hintStyle: TextStyle(
                     color: HexColor("CCDEEF"),
@@ -106,6 +82,8 @@ class CostManagement extends StatelessWidget {
                     borderRadius: BorderRadius.circular(6.w),
                     onTap: () {
                        controller.insertMoney();
+                       alertDialogSuccessAddMoney(context);
+                       //alertDialogNotEmptyMoney(context);
                     },
                     highlightColor: AppColor.Card_highlightColor,
                     splashColor: AppColor.Card_highlightColor,

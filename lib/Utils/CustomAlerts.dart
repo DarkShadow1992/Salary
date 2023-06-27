@@ -179,7 +179,6 @@ alertPutDateServices(BuildContext context) {
             title: Text("در حال ثبت اطلاعات",
               style: TextStyle(
                   fontWeight: FontWeight.w900,
-                  
                   fontSize: 12.w,
                   color: AppColor.Color_TextPrimaryColor
               ),
@@ -702,26 +701,22 @@ alertDialogQuestionExitApp(BuildContext context) {
 }
 //******************************************************************************** */
 //Search not data App AlertDialog
-alertDialogBlankData(BuildContext context) {
-  // show the alert dialog
-  showDialog(
+alertDialogBlankData(BuildContext context) async => showDialog(
     barrierDismissible: false,
     barrierColor: HexColor('#6574CF').withAlpha(150),
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: const Text("خطا در ورود به سیستم...!",
+        title: const Text("عملیات ناموفق",
             style: TextStyle(
                 fontWeight: FontWeight.w800,
-                
                 fontSize: 13,
                 color: Color(0xFF9A0024)),
           textAlign: TextAlign.center,
         ),
-        content: const Text("وارد کردن نام کاربری و کلمه عبور الزامیست.",
+        content: const Text("وارد کردن مبلغ دستمزد الزامیست.",
             style: TextStyle(
                 fontWeight: FontWeight.w600,
-                
                 fontSize: 17,
                 color: Color(0xFF9A0024)),
           textAlign: TextAlign.justify,
@@ -736,7 +731,6 @@ alertDialogBlankData(BuildContext context) {
               alignment: Alignment.center,
             ),
             child: Text('بازگشت', style: TextStyle(
-                
                 fontSize: 11,
                 color: HexColor('#6574CF')
             ),),
@@ -750,7 +744,7 @@ alertDialogBlankData(BuildContext context) {
             ),
             child:Text('خروج از برنامه', style: TextStyle(
                 fontWeight: FontWeight.w800,
-                
+
                 fontSize: 11,
                 color: HexColor('#6574CF')
             ),),
@@ -767,12 +761,135 @@ alertDialogBlankData(BuildContext context) {
       );
     },
   );
-}
+//******************************************************************************** */
+//Success AlertDialog AddMoney
+alertDialogSuccessAddMoney(BuildContext context) async => showDialog(
+  barrierDismissible: false,
+  barrierColor: AppColor.Color_barrierAlertDialogColor.withAlpha(220),
+  context: context,
+  builder: (BuildContext context) {
+    return AlertDialog(
+      title: const Text("عملیات موفق",
+        style: TextStyle(
+            fontWeight: FontWeight.w900,
+            fontSize: 14,
+            color: Color(0xFF00DCBE)),
+        textAlign: TextAlign.center,
+      ),
+      content: const Text("ثبت هزینه با موفقیت انجام شد.",
+        style: TextStyle(
+            height: 2,
+            fontWeight: FontWeight.w900,
+            color: Color(0xFF083051),
+            fontSize: 14,
+        ),
+        textAlign: TextAlign.center,
+        textDirection: ui.TextDirection.rtl,
+      ),
+      actions: [
+        SizedBox(
+          width: double.infinity,
+          child: TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              style: ButtonStyle(
+                alignment: Alignment.center,
+                overlayColor: MaterialStateProperty.all<Color>(
+                  HexColor('#00CC99'),
+                ),
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  HexColor('#E7FFF9'),
+                ),
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 10)
+                ),
+              ),
+              child: Text('ثبت و بازگشت', style: TextStyle(
+
+                fontSize: 12.sp,
+                color: AppColor.Color_TextPrimaryColor,
+              ),)
+          ),
+        )
+      ],
+      backgroundColor: HexColor('#FFFFFF'),
+      buttonPadding: const EdgeInsets.all(10),
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10.0))
+        // borderRadius: BorderRadius.only(topLeft: Radius.circular(32), topRight: Radius.circular(32)),
+      ),
+      elevation: 5.5,
+      // elevation: 5,
+    );
+  },
+);
+//******************************************************************************** */
+//Danger AlertDialog Empty AddMoney
+alertDialogNotEmptyMoney(BuildContext context) async => showDialog(
+  barrierDismissible: false,
+  barrierColor: AppColor.Color_barrierAlertDialogColor.withAlpha(220),
+  context: context,
+  builder: (BuildContext context) {
+    return AlertDialog(
+      title: const Text("عملیات ناموفق",
+        style: TextStyle(
+            fontWeight: FontWeight.w900,
+            fontSize: 14,
+            color: Color(0xFFD9366C)),
+        textAlign: TextAlign.center,
+      ),
+      content: const Text("لطفاً مبلغ هزینه را وارد نمایید.",
+        style: TextStyle(
+          height: 2,
+          fontWeight: FontWeight.w900,
+          color: Color(0xFF083051),
+          fontSize: 14,
+        ),
+        textAlign: TextAlign.center,
+        textDirection: ui.TextDirection.rtl,
+      ),
+      actions: [
+        SizedBox(
+          width: double.infinity,
+          child: TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              style: ButtonStyle(
+                alignment: Alignment.center,
+                overlayColor: MaterialStateProperty.all<Color>(
+                  HexColor('#E1618B'),
+                ),
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  HexColor('#F9E1E9'),
+                ),
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 10)
+                ),
+              ),
+              child: Text('بازگشت', style: TextStyle(
+
+                  fontSize: 12.sp,
+                  color: HexColor('#083051')
+              ),)
+          ),
+        )
+      ],
+      backgroundColor: HexColor('#FFFFFF'),
+      buttonPadding: const EdgeInsets.all(10),
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10.0))
+        // borderRadius: BorderRadius.only(topLeft: Radius.circular(32), topRight: Radius.circular(32)),
+      ),
+      elevation: 5.5,
+      // elevation: 5,
+    );
+  },
+);
 //******************************************************************************** */
 //Success AlertDialog
-alertDialogSuccessRegister(BuildContext context) {
-  // show the alert dialog
-  showDialog(
+alertDialogSuccessRegister(BuildContext context) async => showDialog(
     barrierDismissible: false,
     barrierColor: HexColor('#6574CF').withAlpha(150),
     context: context,
@@ -781,7 +898,6 @@ alertDialogSuccessRegister(BuildContext context) {
         title: const Text("ثبت نام",
           style: TextStyle(
               fontWeight: FontWeight.w900,
-              
               fontSize: 11,
               color: Color(0xFF088471)),
           textAlign: TextAlign.center,
@@ -790,7 +906,6 @@ alertDialogSuccessRegister(BuildContext context) {
           style: TextStyle(
               height: 2,
               fontWeight: FontWeight.w600,
-              
               fontSize: 11,
               color: Color(0xFF088471)),
           textAlign: TextAlign.justify,
@@ -805,7 +920,7 @@ alertDialogSuccessRegister(BuildContext context) {
               alignment: Alignment.center,
             ),
             child: Text('بازگشت', style: TextStyle(
-                
+
                 fontSize: 11,
                 color: HexColor('#6574CF')
             ),),
@@ -819,7 +934,7 @@ alertDialogSuccessRegister(BuildContext context) {
             ),
             child:Text('خروج از برنامه', style: TextStyle(
                 fontWeight: FontWeight.w800,
-                
+
                 fontSize: 11,
                 color: HexColor('#6574CF')
             ),),
@@ -836,7 +951,6 @@ alertDialogSuccessRegister(BuildContext context) {
       );
     },
   );
-}
 //******************************************************************************** */
 //GetServerServices AlertDialog
 alertGetServerServices(BuildContext context) {
