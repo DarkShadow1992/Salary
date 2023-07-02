@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:salary/Views/Home/HomeController.dart';
 import '../../Utils/AllApp_Color.dart';
 import '../../Utils/CustomAlerts.dart';
+import 'package:get/get.dart';
 
 class ViewTouchContentHome extends StatelessWidget {
 
@@ -18,35 +20,32 @@ class ViewTouchContentHome extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                  alignment: Alignment.center,
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(360.w),
-                    onTap: (){
-                      alertPutDateServices(context);
-                      Future.delayed(const Duration(seconds: 2), () {
-                        alertDialogLoginSuccess(context);
-                      });
-                    },
-                    highlightColor: AppColor.Color_TouchSinginhighlightColor.withAlpha(25),
-                    splashColor: AppColor.Color_TouchSinginSplashColor.withAlpha(40),
-                    child: Icon(
-                      Icons.fingerprint,
-                      color: AppColor.Card_EditTextColor,
-                      size: 100.sp,
-                    ),
+                alignment: Alignment.center,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(360.w),
+                  onTap: (){
+                    Get.find<Home_Controller>().addLogin();
+                  },
+                  highlightColor: AppColor.Color_TouchSinginhighlightColor.withAlpha(25),
+                  splashColor: AppColor.Color_TouchSinginSplashColor.withAlpha(40),
+                  child: Icon(
+                    Icons.fingerprint,
+                    color: AppColor.Card_EditTextColor,
+                    size: 100.sp,
                   ),
+                ),
               ),
               Container(
-                  margin: EdgeInsets.fromLTRB(0, 10.h, 0, 0),
-                  alignment: Alignment.center,
-                  child: Text(
-                    'ورود',
-                    style: TextStyle(
-                      color: AppColor.Color_TextPrimaryColor,
-                      fontSize: 12.sp,
-                    ),
-                    textAlign: TextAlign.center,
+                margin: EdgeInsets.fromLTRB(0, 10.h, 0, 0),
+                alignment: Alignment.center,
+                child: Text(
+                  'ورود',
+                  style: TextStyle(
+                    color: AppColor.Color_TextPrimaryColor,
+                    fontSize: 12.sp,
                   ),
+                  textAlign: TextAlign.center,
+                ),
               ),
             ],
           ),
@@ -61,10 +60,7 @@ class ViewTouchContentHome extends StatelessWidget {
                 child: InkWell(
                   borderRadius: BorderRadius.circular(360.w),
                   onTap: (){
-                    alertPutDateServices(context);
-                    Future.delayed(const Duration(seconds: 2), () {
-                      alertDialogLogout(context);
-                    });
+                    Get.find<Home_Controller>().addLogOut();
                   },
                   highlightColor: AppColor.Color_TouchSinginhighlightColor.withAlpha(25),
                   splashColor: AppColor.Color_TouchSinginSplashColor.withAlpha(40),

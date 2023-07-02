@@ -82,8 +82,6 @@ class CostManagement extends StatelessWidget {
                     borderRadius: BorderRadius.circular(6.w),
                     onTap: () {
                        controller.insertMoney();
-                       alertDialogSuccessAddMoney(context);
-                       //alertDialogNotEmptyMoney(context);
                     },
                     highlightColor: AppColor.Card_highlightColor,
                     splashColor: AppColor.Card_highlightColor,

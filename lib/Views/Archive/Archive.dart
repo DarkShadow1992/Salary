@@ -289,7 +289,7 @@ class Archive extends StatelessWidget {
                 showTrailing: true,
                 child: ListView.builder(
                   padding: EdgeInsets.fromLTRB(10.w, 5.w, 10.w, 0.w),
-                  itemCount: 10,
+                  itemCount: controller.items.length,
                   itemBuilder: (context, index) => SizedBox(
                     width: Get.width,
                     height: 140.h,
@@ -338,7 +338,7 @@ class Archive extends StatelessWidget {
                                    //تاریخ ثبت ورود
                                    Expanded(child:
                                    Text(
-                                     '  ${DateTime.now().toPersianDate(twoDigits: true)}',
+                                     controller.items[index]["imp_date"],
                                      style: TextStyle(
                                          color: AppColor.Card_EditTextColor,
                                          fontSize: 12.sp,
@@ -353,7 +353,7 @@ class Archive extends StatelessWidget {
                                    Padding(
                                      padding: EdgeInsets.fromLTRB(0.w, 0.h, 15.w, 0.h),
                                      child: Text(
-                                       controller.formattedDate,
+                                       controller.items[index]["imp_time"],
                                        style: TextStyle(
                                          fontSize: 12.sp,
                                          fontWeight: FontWeight.bold,
@@ -396,7 +396,7 @@ class Archive extends StatelessWidget {
                                   ),),
                                   //تاریخ ثبت خروج
                                   Expanded(child: Text(
-                                    '  ${DateTime.now().toPersianDate(twoDigits: true)}',
+                                    controller.items[index]["out_date"].toString(),
                                     style: TextStyle(
                                         color: AppColor.Card_TrashTextColor,
                                         fontSize: 12.sp,
@@ -410,7 +410,7 @@ class Archive extends StatelessWidget {
                                   Padding(
                                       padding: EdgeInsets.fromLTRB(0.w, 0.h, 15.w, 0.h),
                                     child: Text(
-                                      controller.formattedDate,
+                                      controller.items[index]["out_time"].toString(),
                                       style: TextStyle(
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.bold,
@@ -478,7 +478,7 @@ class Archive extends StatelessWidget {
                                       // دات  کارکرد و جمع درآمد
                                       Expanded(child:
                                       Text(
-                                        '21:41:00',
+                                        controller.getHours(),
                                         selectionColor: AppColor.Card_EditColor,
                                         style: TextStyle(
                                             color: AppColor.Color_TextPrimaryColor,
@@ -504,7 +504,7 @@ class Archive extends StatelessWidget {
                                       // ساعت  کارکرد
                                       Expanded(child:
                                       Text(
-                                        '125.000',
+                                        controller.getTotalSalary(),
                                         style: TextStyle(
                                             color: AppColor.Color_TextPrimaryColor,
                                             fontSize: 13.sp,

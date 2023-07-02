@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:salary/Views/Archive/ArchiveController.dart';
 import 'package:salary/Views/Setting/Setting.dart';
 import '../../Utils/Strings.dart';
 import '../../Utils/database_helper.dart';
@@ -61,7 +62,8 @@ class BasePage_Controller extends GetxController {
     return true;
   }
 
-  gotoArchive() {
+  gotoArchive() async {
+    Get.find<Archive_Controller>().getDetailsList();
     pageIndex.value=1;
     navIndex.value=3;
     textHeader.value=txtArchiveHeader;

@@ -10,6 +10,7 @@ import 'package:intl/intl.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 import 'AllApp_Color.dart';
 import '../../Utils/HexColor.dart';
+import 'package:get/get.dart';
 
 alertDialogAboutApp(BuildContext context) {
   // show the alert dialog
@@ -791,7 +792,7 @@ alertDialogSuccessAddMoney(BuildContext context) async => showDialog(
           width: double.infinity,
           child: TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Get.back(result: "OK");
               },
               style: ButtonStyle(
                 alignment: Alignment.center,
@@ -806,7 +807,6 @@ alertDialogSuccessAddMoney(BuildContext context) async => showDialog(
                 ),
               ),
               child: Text('ثبت و بازگشت', style: TextStyle(
-
                 fontSize: 12.sp,
                 color: AppColor.Color_TextPrimaryColor,
               ),)

@@ -33,15 +33,19 @@ class CostManagement_Controller extends GetxController{
           Get.find<BasePage_Controller>().dbHelper.columnMoney : int.parse(txtController.text.replaceAll(",", ""))
         };
         await Get.find<BasePage_Controller>().dbHelper.insert(row,'salary_money');
-        ///DIALOG
-        alertDialogSuccessAddMoney;
       }
       else{
         updateMoney(txtController.text.replaceAll(",", ""));
       }
-    }else{
       ///DIALOG
-      //alertDialogSuccessAddMoney;
+      var result=await alertDialogSuccessAddMoney(Get.context!);
+      if(result=="OK"){
+        Get.find<BasePage_Controller>().gotoHome();
+      }
+    }
+    else{
+      ///DIALOG
+      alertDialogNotEmptyMoney(Get.context!);
     }
   }
   void updateMoney(String money) async {
