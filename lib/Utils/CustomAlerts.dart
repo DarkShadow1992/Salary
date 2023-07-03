@@ -124,7 +124,7 @@ alertDialogLoginSuccess(BuildContext context) {
             width: double.infinity,
             child: TextButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  Get.back(result: "OK");
                 },
                 style: ButtonStyle(
                   alignment: Alignment.center,
