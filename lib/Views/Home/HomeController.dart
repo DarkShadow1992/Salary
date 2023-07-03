@@ -62,7 +62,7 @@ class Home_Controller extends GetxController {
       alertDialogLoginSuccess(Get.context!);
     }
     else{
-      alertDialogNotEmptyMoney(Get.context!);
+      alertDialogNotErrorLogOut(Get.context!);
     }
   }
 
@@ -71,7 +71,7 @@ class Home_Controller extends GetxController {
 
     if(time.value=="0"){
       alertPutDateServices(Get.context!);
-      Future.delayed(Duration(seconds: 3));
+      Future.delayed(const Duration(seconds: 3));
       Map<String, dynamic> row = {
         Get.find<BasePage_Controller>().dbHelper.columnInsertId: int.parse(Lastid.value),
         Get.find<BasePage_Controller>().dbHelper.columnoutDate: DateTime.now().toPersianDate(twoDigits: true),

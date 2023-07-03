@@ -888,6 +888,69 @@ alertDialogNotEmptyMoney(BuildContext context) async => showDialog(
   },
 );
 //******************************************************************************** */
+//Danger AlertDialog Empty AddMoney
+alertDialogNotErrorLogOut(BuildContext context) async => showDialog(
+  barrierDismissible: false,
+  barrierColor: AppColor.Color_barrierAlertDialogColor.withAlpha(220),
+  context: context,
+  builder: (BuildContext context) {
+    return AlertDialog(
+      title: const Text("عملیات ناموفق",
+        style: TextStyle(
+            fontWeight: FontWeight.w900,
+            fontSize: 14,
+            color: Color(0xFFD9366C)),
+        textAlign: TextAlign.center,
+      ),
+      content: const Text("لطفاً ابتدا ثبت خروج خود را انجام دهید.",
+        style: TextStyle(
+          height: 2,
+          fontWeight: FontWeight.w900,
+          color: Color(0xFF083051),
+          fontSize: 14,
+        ),
+        textAlign: TextAlign.center,
+        textDirection: ui.TextDirection.rtl,
+      ),
+      actions: [
+        SizedBox(
+          width: double.infinity,
+          child: TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              style: ButtonStyle(
+                alignment: Alignment.center,
+                overlayColor: MaterialStateProperty.all<Color>(
+                  HexColor('#E1618B'),
+                ),
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  HexColor('#F9E1E9'),
+                ),
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 10)
+                ),
+              ),
+              child: Text('بازگشت', style: TextStyle(
+
+                  fontSize: 12.sp,
+                  color: HexColor('#083051')
+              ),)
+          ),
+        )
+      ],
+      backgroundColor: HexColor('#FFFFFF'),
+      buttonPadding: const EdgeInsets.all(10),
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10.0))
+        // borderRadius: BorderRadius.only(topLeft: Radius.circular(32), topRight: Radius.circular(32)),
+      ),
+      elevation: 5.5,
+      // elevation: 5,
+    );
+  },
+);
+//******************************************************************************** */
 //Success AlertDialog
 alertDialogSuccessRegister(BuildContext context) async => showDialog(
     barrierDismissible: false,
