@@ -854,7 +854,7 @@ alertDialogNotEmptyMoney(BuildContext context) async => showDialog(
           width: double.infinity,
           child: TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Get.back(result: "OK");
               },
               style: ButtonStyle(
                 alignment: Alignment.center,
