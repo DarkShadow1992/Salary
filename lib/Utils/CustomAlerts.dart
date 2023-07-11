@@ -895,14 +895,14 @@ alertDialogNotErrorLogOut(BuildContext context) async => showDialog(
   context: context,
   builder: (BuildContext context) {
     return AlertDialog(
-      title: const Text("عملیات ناموفق",
+      title:  Text("عملیات ناموفق",
         style: TextStyle(
             fontWeight: FontWeight.w900,
-            fontSize: 14,
-            color: Color(0xFFD9366C)),
+            fontSize: 14.sp,
+            color: const Color(0xFFD9366C)),
         textAlign: TextAlign.center,
       ),
-      content: const Text("لطفاً ابتدا ثبت خروج خود را انجام دهید.",
+      content: const Text("لطفاً ابتدا ثبت ورود خود را انجام دهید.",
         style: TextStyle(
           height: 2,
           fontWeight: FontWeight.w900,

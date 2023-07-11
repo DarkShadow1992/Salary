@@ -64,7 +64,7 @@ class Home_Controller extends GetxController {
             Get.find<BasePage_Controller>().dbHelper.columnimpTime:
             DateFormat.Hm().format(DateTime.now()),
             Get.find<BasePage_Controller>().dbHelper.columnoutDate: "0",
-            Get.find<BasePage_Controller>().dbHelper.columnoutTime: "0",
+            Get.find<BasePage_Controller>().dbHelper.columnoutTime: "00:00",
             Get.find<BasePage_Controller>().dbHelper.columnPrice: money.value,
             Get.find<BasePage_Controller>().dbHelper.columnJob: "0"
           };
@@ -103,9 +103,10 @@ class Home_Controller extends GetxController {
       if(gotoPriceView=="OK"){
         Get.find<BasePage_Controller>().pageIndex.value=3;
       }
-    }else{
+    }
+    else{
       if(!IsFirst.value){
-        if(time.value=="0"){
+        if(time.value=="00:00"){
           Map<String, dynamic> row = {
             Get.find<BasePage_Controller>().dbHelper.columnInsertId: int.parse(Lastid.value),
             Get.find<BasePage_Controller>().dbHelper.columnoutDate: DateTime.now().toPersianDate(twoDigits: true),
@@ -120,7 +121,7 @@ class Home_Controller extends GetxController {
         }
       }
       else{
-        alertDialogNotEmptyMoney(Get.context!);
+        alertDialogNotErrorLogOut(Get.context!);
       }
     }
   }

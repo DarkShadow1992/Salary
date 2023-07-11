@@ -8,6 +8,7 @@ import '../../Utils/HexColor.dart';
 import 'ArchiveController.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
+import 'package:shamsi_date/shamsi_date.dart';
 
 class Archive extends StatelessWidget {
   var controller = Get.put(Archive_Controller());
@@ -83,7 +84,7 @@ class Archive extends StatelessWidget {
                                     child: Container(
                                       alignment: Alignment.center,
                                       child: Text(
-                                        '${controller.currentMonthName}',
+                                        "${DateTime.now().toJalali().formatter.mN} ماه ",
                                         style: TextStyle(
                                           color: AppColor
                                               .Color_CardbackgroundTextColor,
@@ -175,7 +176,7 @@ class Archive extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            'جمع کارکرد',
+                            'جمع درآمد',
                             style: TextStyle(
                               color: AppColor.Color_TextPrimaryColor,
                               fontSize: 12.sp,
@@ -225,7 +226,7 @@ class Archive extends StatelessWidget {
                                                 padding: EdgeInsets.fromLTRB(
                                                     0.w, 0.h, 5.w, 0.h),
                                                 child: Text(
-                                                  '07:45:00',
+                                                  controller.totalFullMoney.value.toStringAsFixed(0).seRagham(),
                                                   style: TextStyle(
                                                     color: AppColor
                                                         .Color_CardbackgroundTextColor,
@@ -240,7 +241,7 @@ class Archive extends StatelessWidget {
                                                   padding: EdgeInsets.fromLTRB(
                                                       5.w, 0.h, 0.w, 0.h),
                                                   child: Text(
-                                                    'ساعت',
+                                                    'تومان',
                                                     style: TextStyle(
                                                       color: AppColor
                                                           .Color_TextPrimaryColor,
