@@ -18,6 +18,8 @@ class DatabaseHelper {
   String columnoutTime = 'out_time';
   String columnPrice = 'salary_price';
   String columnJob = 'job_time';
+  String columnDescImp = 'imp_description';
+  String columnDescOut = 'out_description';
 
   String columnMoneyId = '_id';
   String columnMoney = 'money';
@@ -45,7 +47,9 @@ class DatabaseHelper {
             $columnoutDate STRING NOT NULL,
             $columnoutTime STRING NOT NULL,
             $columnPrice STRING NOT NULL,
-            $columnJob STRING NOT NULL
+            $columnJob STRING NOT NULL,
+            $columnDescImp STRING NOT NULL,
+            $columnDescOut STRING NOT NULL
           )
           ''');
     await db.execute('''

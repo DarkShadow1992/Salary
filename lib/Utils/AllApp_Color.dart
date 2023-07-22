@@ -35,4 +35,7 @@ class AppColor {
   static Color Color_CardbackgroundColor= const Color(0xFFE5F1FC);
   static Color Color_CardbackgroundTextColor= const Color(0xFF4788C7);
   static Color Color_GlowingOverscrollIndicator= const Color(0xFFE5F1FC);
+
+  static Color ColorLightFingerOut= const Color(0xFFFC6A6A);
+  static Color ColorDarkFingerOut= const Color(0xFF62FAD7);
 }

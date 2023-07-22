@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import '../../Utils/AllApp_Color.dart';
 import '../../Utils/HexColor.dart';
+import '../../Utils/theme/Themes.dart';
 import '../Home/viewDrawerHome.dart';
 import 'BasePageController.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -52,6 +53,8 @@ class BasePage extends StatelessWidget {
                 color: AppColor.Color_IconPrimaryColor,
                 padding: const EdgeInsets.only(left: 15.0),
                 onPressed: (){
+                  print("A");
+                  Get.changeTheme(Themes.dark);
                 },
               ) : IconButton(
                 icon: const Icon(CupertinoIcons.chevron_back),

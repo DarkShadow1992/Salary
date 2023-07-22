@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:salary/Views/Home/HomeController.dart';
 import '../../Utils/HexColor.dart';
 
 class ViewTextFieldDetails extends StatelessWidget {
@@ -20,6 +22,7 @@ class ViewTextFieldDetails extends StatelessWidget {
                 color: HexColor('#FFFFFF'),
               ),
               child: TextField(
+                controller: Get.find<Home_Controller>().desc,
                 textAlignVertical: TextAlignVertical.top,
                 textAlign: TextAlign.center,
                 textDirection: TextDirection.rtl,

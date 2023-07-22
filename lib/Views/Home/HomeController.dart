@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import '../../Utils/CustomAlerts.dart';
@@ -13,7 +14,7 @@ class Home_Controller extends GetxController {
   RxString Lastid = "0".obs;
   RxString time = "0".obs;
   RxBool IsFirst=true.obs;
-
+  TextEditingController desc=TextEditingController();
 
   getCurrentMoney() async {
     final getRowCount = await Get.find<BasePage_Controller>()
@@ -57,16 +58,18 @@ class Home_Controller extends GetxController {
     }
     else{
       if(!IsFirst.value){
-        if(time.value!="0"){
+        if(time.value!="00:00"){
           Map<String, dynamic> row = {
             Get.find<BasePage_Controller>().dbHelper.columnimpDate:
             DateTime.now().toPersianDate(twoDigits: true),
             Get.find<BasePage_Controller>().dbHelper.columnimpTime:
             DateFormat.Hm().format(DateTime.now()),
-            Get.find<BasePage_Controller>().dbHelper.columnoutDate: "0",
+            Get.find<BasePage_Controller>().dbHelper.columnoutDate: "00:00",
             Get.find<BasePage_Controller>().dbHelper.columnoutTime: "00:00",
             Get.find<BasePage_Controller>().dbHelper.columnPrice: money.value,
-            Get.find<BasePage_Controller>().dbHelper.columnJob: "0"
+            Get.find<BasePage_Controller>().dbHelper.columnJob: "0",
+            Get.find<BasePage_Controller>().dbHelper.columnDescImp: Get.find<Home_Controller>().desc.text,
+            Get.find<BasePage_Controller>().dbHelper.columnDescOut: ""
           };
           await Get.find<BasePage_Controller>().dbHelper.insert(row, 'salary_details');
           Get.back();
@@ -82,16 +85,20 @@ class Home_Controller extends GetxController {
           DateTime.now().toPersianDate(twoDigits: true),
           Get.find<BasePage_Controller>().dbHelper.columnimpTime:
           DateFormat.Hm().format(DateTime.now()),
-          Get.find<BasePage_Controller>().dbHelper.columnoutDate: "0",
-          Get.find<BasePage_Controller>().dbHelper.columnoutTime: "0",
+          Get.find<BasePage_Controller>().dbHelper.columnoutDate: "00:00",
+          Get.find<BasePage_Controller>().dbHelper.columnoutTime: "00:00",
           Get.find<BasePage_Controller>().dbHelper.columnPrice: money.value,
-          Get.find<BasePage_Controller>().dbHelper.columnJob: "0"
+          Get.find<BasePage_Controller>().dbHelper.columnJob: "0",
+          Get.find<BasePage_Controller>().dbHelper.columnDescImp: Get.find<Home_Controller>().desc.text,
+          Get.find<BasePage_Controller>().dbHelper.columnDescOut: ""
         };
         await Get.find<BasePage_Controller>().dbHelper.insert(row, 'salary_details');
         Get.back();
         alertDialogLoginSuccess(Get.context!);
       }
     }
+
+    desc.text="";
   }
 
   addLogOut() async {
@@ -111,6 +118,7 @@ class Home_Controller extends GetxController {
             Get.find<BasePage_Controller>().dbHelper.columnInsertId: int.parse(Lastid.value),
             Get.find<BasePage_Controller>().dbHelper.columnoutDate: DateTime.now().toPersianDate(twoDigits: true),
             Get.find<BasePage_Controller>().dbHelper.columnoutTime: DateFormat.Hm().format(DateTime.now()),
+            Get.find<BasePage_Controller>().dbHelper.columnDescOut: Get.find<Home_Controller>().desc.text
           };
           await Get.find<BasePage_Controller>().dbHelper.update(row, 'salary_details','_id');
           Get.back();
@@ -124,5 +132,7 @@ class Home_Controller extends GetxController {
         alertDialogNotErrorLogOut(Get.context!);
       }
     }
+
+    desc.text="";
   }
 }

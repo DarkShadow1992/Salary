@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:salary/Views/Home/HomeController.dart';
 import '../../Utils/AllApp_Color.dart';
-import '../../Utils/CustomAlerts.dart';
 import 'package:get/get.dart';
+
+import '../../Utils/theme/Themes.dart';
 
 class ViewTouchContentHome extends StatelessWidget {
 
@@ -66,7 +67,7 @@ class ViewTouchContentHome extends StatelessWidget {
                   splashColor: AppColor.Color_TouchSinginSplashColor.withAlpha(40),
                   child: Icon(
                     Icons.fingerprint,
-                    color: AppColor.Card_TrashSplashColor,
+                    color: Themes.light.errorColor,
                     size: 100.sp,
                   ),
                 ),
