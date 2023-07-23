@@ -5,8 +5,6 @@ import 'package:salary/Views/Home/HomeController.dart';
 import '../../Utils/AllApp_Color.dart';
 import 'package:get/get.dart';
 
-import '../../Utils/theme/Themes.dart';
-
 class ViewTouchContentHome extends StatelessWidget {
 
   @override
@@ -67,7 +65,7 @@ class ViewTouchContentHome extends StatelessWidget {
                   splashColor: AppColor.Color_TouchSinginSplashColor.withAlpha(40),
                   child: Icon(
                     Icons.fingerprint,
-                    color: Themes.light.errorColor,
+                    color: AppColor.Card_TrashSplashColor,
                     size: 100.sp,
                   ),
                 ),

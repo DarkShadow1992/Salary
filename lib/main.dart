@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'Utils/AllApp_Color.dart';
 import 'Utils/HexColor.dart';
-import 'Utils/theme/Themes.dart';
 import 'mainController.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get_storage/get_storage.dart';
@@ -51,7 +51,7 @@ class Splash extends StatelessWidget {
                   ),),
                   SizedBox(height: 20.h,),
                   Text('نسخه آزمایشی',style: TextStyle(
-                    color: HexColor("000000"),
+                    color: AppColor.Color_TextPrimaryColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 13.sp
                   ),)

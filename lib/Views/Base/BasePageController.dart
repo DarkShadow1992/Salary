@@ -30,7 +30,7 @@ class BasePage_Controller extends GetxController {
   String selectedColor="003C75";
   String unselectedColor="ADC2D6";
   String selectedBackColor="9ED0FF";
-  String selectExitColor = "D12D0C";
+  String selectExitColor = "D9366C";
   final box = GetStorage();
   RxBool appbarVIS=true.obs;
   RxBool navbarVIS=true.obs;

@@ -20,7 +20,8 @@ class Home extends StatelessWidget {
           children: AnimationConfiguration.toStaggeredList(
             duration: const Duration(milliseconds: 375),
             childAnimationBuilder: (widget) => SlideAnimation(
-              horizontalOffset: 50.0,
+              verticalOffset: 70.0,
+              //horizontalOffset: 50.0,
               child: FadeInAnimation(
                 child: widget,
               ),

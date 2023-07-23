@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import '../../Utils/AllApp_Color.dart';
 import '../../Utils/HexColor.dart';
-import '../../Utils/theme/Themes.dart';
 import '../Home/viewDrawerHome.dart';
 import 'BasePageController.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -54,7 +53,7 @@ class BasePage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 15.0),
                 onPressed: (){
                   print("A");
-                  Get.changeTheme(Themes.dark);
+                  //Get.changeTheme(Themes.dark);
                 },
               ) : IconButton(
                 icon: const Icon(CupertinoIcons.chevron_back),
@@ -169,7 +168,7 @@ class BasePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Expanded(child: Icon(CupertinoIcons.clear_circled_solid, color: HexColor("D12D0C"))),
+                          Expanded(child: Icon(CupertinoIcons.clear_circled_solid, color: HexColor("D9366C"))),
                           Text('خروج',style: TextStyle(
                               fontSize: 12.sp,
                               fontWeight:  FontWeight.bold,
