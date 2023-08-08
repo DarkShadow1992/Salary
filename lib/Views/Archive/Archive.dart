@@ -483,7 +483,7 @@ class Archive extends StatelessWidget {
                                             // دات  کارکرد و جمع درآمد
                                             Expanded(child:
                                             Text(
-                                              controller.getHours(controller.items[index]["out_time"].toString(),controller.items[index]["imp_time"].toString()),
+                                              controller.getHours(controller.items[index]["out_time"].toString(),controller.items[index]["imp_time"].toString(),controller.items[index]["out_date"].toString(),controller.items[index]["imp_date"].toString()),
                                               selectionColor: AppColor.Card_EditColor,
                                               style: TextStyle(
                                                   color: AppColor.Color_TextPrimaryColor,
@@ -509,7 +509,7 @@ class Archive extends StatelessWidget {
                                             // ساعت  کارکرد
                                             Expanded(child:
                                             Text(
-                                              controller.getTotalSalary(controller.items[index]["out_time"].toString(),controller.items[index]["imp_time"].toString()),
+                                              controller.getTotalSalary(controller.items[index]["out_time"].toString(),controller.items[index]["imp_time"].toString(),controller.items[index]["out_date"].toString(),controller.items[index]["imp_date"].toString()),
                                               style: TextStyle(
                                                   color: AppColor.Color_TextPrimaryColor,
                                                   fontSize: 13.sp,

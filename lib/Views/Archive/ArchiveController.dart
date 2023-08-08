@@ -11,6 +11,7 @@ import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
+import 'package:shamsi_date/shamsi_date.dart';
 
 class Archive_Controller extends GetxController{
   ArchiveService archiveService=ArchiveService();
@@ -128,12 +129,9 @@ class Archive_Controller extends GetxController{
     }
   }
 
-  String getTotalSalary(String time1, String time2) {
-    DateFormat dateFormat = DateFormat("yyyy-MM-dd");
-    var _date = dateFormat.format(DateTime.now());
-
-    DateTime a = DateTime.parse('$_date $time1');
-    DateTime b = DateTime.parse('$_date $time2');
+  String getTotalSalary(String time1, String time2,String Date1, String Date2) {
+    DateTime a = DateTime.parse('${convertToMiladiDate(Date1, time1)}');
+    DateTime b = DateTime.parse('${convertToMiladiDate(Date2, time2)}');
 
     if(a.difference(b).inMinutes > 0){
       return (a.difference(b).inMinutes*double.parse(money.value)).toStringAsFixed(0).seRagham();
@@ -145,15 +143,15 @@ class Archive_Controller extends GetxController{
 
   getTotalFullMoney() {
     totalFullMoney.value=0.0;
-    DateFormat dateFormat = DateFormat("yyyy-MM-dd");
-    var _date = dateFormat.format(DateTime.now());
-    for(int i=0;i<items.length;i++){
 
+    for(int i=0;i<items.length;i++){
       String time1=items[i]["out_time"].toString();
       String time2=items[i]["imp_time"].toString();
+      String date1=items[i]["out_date"].toString();
+      String date2=items[i]["imp_date"].toString();
 
-      DateTime a = DateTime.parse('$_date $time1');
-      DateTime b = DateTime.parse('$_date $time2');
+      DateTime a = DateTime.parse('${convertToMiladiDate(date1, time1)}');
+      DateTime b = DateTime.parse('${convertToMiladiDate(date2, time2)}');
 
       if(a.difference(b).inMinutes > 0){
         totalFullMoney.value=totalFullMoney.value+a.difference(b).inMinutes*double.parse(money.value);
@@ -161,15 +159,9 @@ class Archive_Controller extends GetxController{
     }
   }
 
-  String getHours(String time1, String time2) {
-    DateFormat dateFormat = DateFormat("yyyy-MM-dd");
-    var _date = dateFormat.format(DateTime.now());
-
-    print(time1);
-    print(time2);
-
-    DateTime a = DateTime.parse('$_date $time1');
-    DateTime b = DateTime.parse('$_date $time2');
+  String getHours(String time1, String time2,String Date1, String Date2) {
+    DateTime a = DateTime.parse('${convertToMiladiDate(Date1, time1)}');
+    DateTime b = DateTime.parse('${convertToMiladiDate(Date2, time2)}');
 
     if(a.difference(b).inMinutes > 0){
       return getTimeString(a.difference(b).inMinutes);
@@ -183,6 +175,27 @@ class Archive_Controller extends GetxController{
     final int hour = value ~/ 60;
     final int minutes = value % 60;
     return '${hour.toString().padLeft(2, "0")}:${minutes.toString().padLeft(2, "0")}';
+  }
+
+  DateTime convertToMiladiDate(String Date,String time){
+    String year="0",month="0",day="0";
+
+    List<String> impSplit=Date.split("/");
+    Jalali jimp = Jalali(int.parse(impSplit[0].toEnglishDigit()), int.parse(impSplit[1].toEnglishDigit()), int.parse(impSplit[2].toEnglishDigit()));
+    Gregorian impToMiladi = jimp.toGregorian();
+
+    year=impToMiladi.year.toString();
+    month=impToMiladi.month.toString();
+    day=impToMiladi.day.toString();
+
+    if(impToMiladi.month<10){month="0${impToMiladi.month}";}
+    if(impToMiladi.day<10){day="0${impToMiladi.day}";}
+
+
+    print('$year-$month-$day $time');
+
+
+    return DateTime.parse('$year-$month-$day $time');
   }
 
 }
